@@ -2,60 +2,35 @@ import streamlit as st
 import random
 
 # CSS with proper formatting
-st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-html, body, [class*="css"] {
-    font-family: 'Montserrat', sans-serif;
-}
-.stApp {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-.game-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-.title {
-    color: #764ba2;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-.stNumberInput input {
-    border: 2px solid #764ba2 !important;
-    border-radius: 10px !important;
-    padding: 10px !important;
-}
-.stButton>button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 12px 24px !important;
-    font-weight: bold !important;
-    transition: transform 0.3s !important;
-}
-.stButton>button:hover {
-    transform: scale(1.05) !important;
-}
-.result {
-    font-size: 1.2rem;
-    margin: 20px 0;
-    font-weight: bold;
-}
-.attempts {
-    color: #764ba2;
-    font-weight: bold;
-}
-</style>
-""", unsafe_allow_html=True)
-
+st.markdown(
+    """
+    <style>
+    /* Game Container (ubah background jadi transparan) */
+    .game-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.2) !important;  # Transparan
+        backdrop-filter: blur(10px);  # Efek blur modern
+        border-radius: 20px;
+        text-align: center;
+        color: white !important;  # Teks putih
+    }
+    
+    /* Input Box (teks putih) */
+    .stNumberInput input {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Judul dan teks lainnya */
+    .title, .attempts, .result {
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Game logic
 with st.container():
     st.markdown('<div class="game-container">', unsafe_allow_html=True)
